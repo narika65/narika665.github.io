@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>📂 ระบบ OCR สำหรับแสกนบิล</title>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h2>📂 ระบบ OCR สำหรับแสกนบิล</h2>
+<div class="container">
+    <input type="file" id="fileInput" multiple onchange="upload()">
+
+    <button onclick="runBatchOCR()">🚀 เริ่มแสกนข้อมูลบิล</button>
+    <button onclick="exportJSON()">📤 Save JSON</button>
+    <button onclick="exportExcel()">📊 Save Excel</button>
+
+    <br><br>
+
+    <p id="status"></p>
+     
+    <!--output OCR-->
+    <textarea id="result" rows="15" cols="70" style="width: 98%;"></textarea>
+
+    <p id="result2"></p>
+
+    <div id="previewContainer"></div>
+    <div id="imgModal" class="modal" onclick="closeModal()">
+        <img id="zoomImage">
+    </div>
+</div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
